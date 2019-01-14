@@ -22,7 +22,7 @@ NEWSPIDER_MODULE = "googleScraper.spiders"
 ROBOTSTXT_OBEY = False
 ITEM_PIPELINES = {"googleScraper.pipelines.GooglescraperPipeline": 1}
 
-IMAGES_STORE = "/path/to/valid/directory"
+IMAGES_STORE = "path/to/valid/dir"
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 # CONCURRENT_REQUESTS = 32
