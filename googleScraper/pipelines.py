@@ -14,12 +14,11 @@ class GooglescraperPipeline(ImagesPipeline):
         yield Request(item["url"], meta={"image_name": item["name"]})
 
     def file_path(self, request, response=None, info=None):
-        return "%s/%s.jpg" % (
+        return "images/%s/%s.jpg" % (
             request.meta["image_name"].split("_")[0],
             request.meta["image_name"].split("_")[1],
         )
 
     def item_completed(self, results, item, info):
-        print("\n\nentered into item_completed\n")
         print("Name : ", item["name"])
         print("Results:", results)
