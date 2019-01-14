@@ -12,18 +12,19 @@ class searchSpider(scrapy.Spider):
         with open("to_search.txt") as o:
             for line in o:
                 query = line.strip()
-                print(query)
+                query = "+".join(query.split(" "))
                 url_query = url.format(query, query)
-                print(url_query)
-                yield Request(url=url_query, callback=self.parse, meta={"title": query})
+                yield Request(
+                    url=url_query,
+                    callback=self.parse,
+                    meta={"title": " ".join(query.split("+"))},
+                )
 
     def parse(self, response):
 
         urls = response.css("img::attr(src)").extract()
-        print(urls)
         for i in range(0, len(urls)):
-            print(urls[i])
             yield GooglescraperItem(
-                name=response.request.meta["title"] + "_" + str(i), url=urls[i]
+                name=response.request.meta["title"] + "_" + str(i + 1), url=urls[i]
             )
 
