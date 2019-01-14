@@ -6,7 +6,7 @@ A simple tool to scrape google images by simply specifying queries
 1. `git clone https://github.com/gigatesseract/GimageScrape.git`    
 1. Install virtualenv (recommended) `pip install vitualenv`    
 1. Create virtual environment `virtualenv env`   
-1. Activate the virtual environment `source env/bin/activate` (You can deactivate it by `source deactivate`)    
+1. Activate the virtual environment `source env/bin/activate` (You can deactivate it by `deactivate`)    
 1. Install requirements. `pip install -r requirements.txt`    
 1. Populate _to_search.txt_ with your search queries. Make sure each query is in a new line. See _to_search.txt_ for more details. Supports space separated queries.    
 1. `cd googleScraper`   
